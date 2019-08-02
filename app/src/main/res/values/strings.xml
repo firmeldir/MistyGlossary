@@ -1,3 +1,41 @@
 <resources>
     <string name="app_name">Misty Glossary</string>
+    <string name="big_test_text">Big test text</string>
+    <string name="test">Test</string>
+
+
+    <array name="lan_title">
+        <item>Elvish</item>
+        <item>Orcish</item>
+        <item>Dothraki</item>
+        <item>Thuum</item>
+        <item>Yoda</item>
+    </array>
+
+    <array name="lan_info">
+        <item>Learn to speak the language of the most powerful nation in Middle-earth</item>
+        <item>This is in case Sauron still returns and Sir Ian Murray McKellen will not have time</item>
+        <item>Language from one great movie that is no longer fashionable now</item>
+        <item>The language of the most ancient creatures of Tamriel</item>
+        <item>When you speaking in this language, wisdom is added</item>
+    </array>
+
+    <array name="lan_path">
+        <item>/elvish</item>
+        <item>/orcish</item>
+        <item>/dothraki</item>
+        <item>/thuum</item>
+        <item>/yoda</item>
+    </array>
+
+    <array name="lan_image">
+        <item>@drawable/elvish</item>
+        <item>@drawable/orcish</item>
+        <item>@drawable/dothraki</item>
+        <item>@drawable/thuum</item>
+        <item>@drawable/yoda</item>
+    </array>
+
+
+
 </resources>

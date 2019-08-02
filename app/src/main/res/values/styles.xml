@@ -1,11 +1,59 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorPrimaryVariant">@color/primaryLightColor</item>
+        <item name="colorOnPrimary">@color/colorOnFirst</item>
+        <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorSecondaryVariant">@color/secondaryLightColor</item>
+        <item name="colorOnSecondary">@color/colorOnFirst</item>
+        <item name="colorError">#F44336</item>
+        <item name="colorOnError">@color/colorOnFirst</item>
+        <item name="colorSurface">@color/colorOnFirst</item>
+        <item name="colorOnSurface">@color/colorOnSecond</item>
+        <item name="android:colorBackground">@color/colorOnFirst</item>
+        <item name="colorOnBackground">@color/colorOnSecond</item>
+
+        <item name="toolbarStyle">@style/Widget.AppTheme.Toolbar</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.AppTheme.Headline6</item>
+        <item name="textAppearanceButton">@style/TextAppearance.AppTheme.Button</item>
+
+    </style>
+
+
+    <style name="Widget.AppTheme.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:colorBackground">?attr/colorOnSecondary</item>
+        <item name="android:backgroundTint">?attr/colorOnSecondary</item>
+        <item name="titleTextColor">?attr/colorOnPrimary</item>
+        <item name="titleTextAppearance">@style/TextAppearance.AppTheme.Toolbar</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/courgette</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Toolbar" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="fontFamily">@font/courgette</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.Button" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="fontFamily">@font/lato</item>
+    </style>
+
+
+    <style name="TextAppearance.AppTheme.CardView" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/lato</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.CardViewSub" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/lato</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
 </resources>
