@@ -6,11 +6,18 @@
 
     <fragment android:id="@+id/languageFragment" android:name="com.example.mistyglossary.ui.LanguageFragment"
               android:label="fragment_language" tools:layout="@layout/fragment_language">
-        <action android:id="@+id/action_languageFragment_to_translationFragment"
-                app:destination="@id/translationFragment"/>
+        <action android:id="@+id/toTransFrag"
+                app:destination="@id/translationFragment" app:enterAnim="@anim/nav_default_enter_anim"
+                app:exitAnim="@anim/nav_default_exit_anim">
+        </action>
     </fragment>
+
     <fragment android:id="@+id/translationFragment" android:name="com.example.mistyglossary.ui.TranslationFragment"
-              android:label="fragment_translation" tools:layout="@layout/fragment_translation"/>
+              android:label="fragment_translation" tools:layout="@layout/fragment_translation">
+        <argument android:name="lanId" app:argType="integer" android:defaultValue="1"/>
+    </fragment>
+
     <fragment android:id="@+id/preservationFragment" android:name="com.example.mistyglossary.ui.PreservationFragment"
               android:label="fragment_preservation" tools:layout="@layout/fragment_preservation"/>
+
 </navigation>

@@ -2,6 +2,9 @@
     <string name="app_name">Misty Glossary</string>
     <string name="big_test_text">Big test text</string>
     <string name="test">Test</string>
+    <string name="translate">Translate</string>
+    <string name="hint">Enter english words here for translation</string>
+    <string name="error">It seems an error has occurred. Check internet connection</string>
 
 
     <array name="lan_title">
@@ -21,11 +24,11 @@
     </array>
 
     <array name="lan_path">
-        <item>/elvish</item>
-        <item>/orcish</item>
-        <item>/dothraki</item>
-        <item>/thuum</item>
-        <item>/yoda</item>
+        <item>sindarin</item>
+        <item>orcish</item>
+        <item>dothraki</item>
+        <item>thuum</item>
+        <item>yoda</item>
     </array>
 
     <array name="lan_image">
@@ -34,6 +37,14 @@
         <item>@drawable/dothraki</item>
         <item>@drawable/thuum</item>
         <item>@drawable/yoda</item>
+    </array>
+
+    <array name="lan_back">
+        <item>@color/elvishColor</item>
+        <item>@color/orcishColor</item>
+        <item>@color/dothrakiColor</item>
+        <item>@color/thuumColor</item>
+        <item>@color/yodaColor</item>
     </array>
 
 

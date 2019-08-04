@@ -3,6 +3,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
 
+        <item name="android:windowContentTransitions">true</item>
+
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/primaryDarkColor</item>
         <item name="colorPrimaryVariant">@color/primaryLightColor</item>
@@ -20,6 +22,7 @@
         <item name="toolbarStyle">@style/Widget.AppTheme.Toolbar</item>
         <item name="textAppearanceHeadline6">@style/TextAppearance.AppTheme.Headline6</item>
         <item name="textAppearanceButton">@style/TextAppearance.AppTheme.Button</item>
+        <item name="textInputStyle">@style/Widget.AppTheme.TextInputLayout.Translate</item>
 
     </style>
 
@@ -55,5 +58,15 @@
         <item name="fontFamily">@font/lato</item>
         <item name="android:textSize">14sp</item>
     </style>
+
+    <style name="TextAppearance.AppTheme.Translation.Title" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/courgette</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="Widget.AppTheme.TextInputLayout.Translate" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+    </style>
+
+    <!--Widget.MaterialComponents.TextInputLayout.OutlinedBox-->
 
 </resources>

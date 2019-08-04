@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="primaryColor">#827717</color>
-    <color name="primaryLightColor">#b4a647</color>
+    <color name="primaryLightColor">#B4A647</color>
     <color name="primaryDarkColor">#524c00</color>
     <color name="secondaryColor">#9ccc65</color>
     <color name="secondaryLightColor">#cfff95</color>
@@ -9,4 +9,12 @@
     <color name="colorError">#e65100</color>
     <color name="colorOnFirst">#FFFFFF</color>
     <color name="colorOnSecond">#212121</color>
+
+
+    <color name="elvishColor">#D9D6D1</color>
+    <color name="orcishColor">#C5CFB4</color>
+    <color name="dothrakiColor">#857660</color>
+    <color name="thuumColor">#A6B3AA</color>
+    <color name="yodaColor">#69A026</color>
+
 </resources>

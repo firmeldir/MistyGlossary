@@ -16,9 +16,5 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         setSupportActionBar(binding.mainToolbar)
-
-        val mistyLanguage = initializeLanguages(this)
-
-
     }
 }

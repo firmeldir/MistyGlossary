@@ -6,8 +6,27 @@ import com.bumptech.glide.Glide
 import com.example.mistyglossary.domain.MistyLanguage
 
 
-@BindingAdapter("setCusImage")
-fun ImageView.setTitleImage(item: MistyLanguage)
+@BindingAdapter("setResImage")
+fun setResImage(imageView: ImageView, item: Int)
 {
-    Glide.with(context).load(item.imageResource).into(this)
+    Glide.with(imageView.context).load(imageView.context.getDrawable(item)).into(imageView)
 }
+
+@BindingAdapter("setBackToImage")
+fun setBackToImage(imageView: ImageView, item: Int)
+{
+    imageView.setBackgroundResource(item)
+}
+
+@BindingAdapter("setResImage")
+fun setResImage(imageView: ImageView, item: MistyLanguage?)
+{
+    item?.let {
+        Glide.with(imageView.context)
+            .load(imageView.context.getDrawable(item.imageResource))
+            .into(imageView)
+    }
+}
+
+
+
