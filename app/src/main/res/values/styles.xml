@@ -23,6 +23,7 @@
         <item name="textAppearanceHeadline6">@style/TextAppearance.AppTheme.Headline6</item>
         <item name="textAppearanceButton">@style/TextAppearance.AppTheme.Button</item>
         <item name="textInputStyle">@style/Widget.AppTheme.TextInputLayout.Translate</item>
+        <item name="materialCardViewStyle">@style/Widget.AppTheme.MaterialCardView</item>
 
     </style>
 
@@ -54,6 +55,10 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="Widget.AppTheme.MaterialCardView" parent="Widget.MaterialComponents.CardView">
+        <item name="shapeAppearance">@style/ShapeAppearance.AppTheme.MaterialCardView</item>
+    </style>
+
     <style name="TextAppearance.AppTheme.CardViewSub" parent="TextAppearance.MaterialComponents.Subtitle2">
         <item name="fontFamily">@font/lato</item>
         <item name="android:textSize">14sp</item>
@@ -67,6 +72,28 @@
     <style name="Widget.AppTheme.TextInputLayout.Translate" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
     </style>
 
-    <!--Widget.MaterialComponents.TextInputLayout.OutlinedBox-->
+    <style name="Widget.AppTheme.Backdrop" parent="">
+        <item name="android:background">?attr/colorSecondaryVariant</item>
+    </style>
+
+    <style name="Widget.AppTheme.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+    </style>
+
+    <style name="ShapeAppearance.AppTheme.MaterialCardView" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">4dp</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.EngWord" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/lato</item>
+        <item name="android:textColor">@color/engWordColor</item>
+    </style>
+
+    <style name="TextAppearance.AppTheme.TransWord" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/lato</item>
+        <item name="android:textColor">?attr/colorSecondary</item>
+    </style>
 
 </resources>

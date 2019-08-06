@@ -6,6 +6,7 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+            android:background="?attr/colorSecondaryVariant"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:context=".MainActivity">
@@ -18,25 +19,73 @@
                                                          app:layout_constraintEnd_toEndOf="parent"
                                                          android:id="@+id/appBarLayout">
 
-            <com.google.android.material.appbar.MaterialToolbar android:layout_width="match_parent"
+            <androidx.appcompat.widget.Toolbar android:layout_width="match_parent"
                                                                 android:layout_height="wrap_content"
+                                                                app:navigationIcon="@drawable/s_backdrop_icon"
                                                                 android:id="@+id/main_toolbar"/>
 
         </com.google.android.material.appbar.AppBarLayout>
 
 
-        <fragment
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:name="androidx.navigation.fragment.NavHostFragment"
-                app:navGraph="@navigation/main_navigation"
-                app:defaultNavHost="true"
-                app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
+        <LinearLayout
+                style="@style/Widget.AppTheme.Backdrop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/backDrop"
+                app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+            <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.AppTheme.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_language" android:id="@+id/selectLanB"/>
+
+            <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.AppTheme.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/saved_phrases" android:id="@+id/savedWordB"/>
+
+            <View
+                    android:layout_width="212dp"
+                    android:layout_height="1dp"
+                    android:layout_margin="16dp"
+                    android:background="?attr/colorPrimary"
+            />
+
+            <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.AppTheme.Button.TextButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/clear_cache" android:id="@+id/clearB"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:background="@color/productGridBackgroundColor"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:id="@+id/main_navcontroller"/>
+                android:layout_width="0dp"
+                android:layout_height="0dp" android:id="@+id/downDropper"
+                android:elevation="8dp"
+                app:layout_constraintTop_toTopOf="@+id/backDrop">
 
+            <fragment
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_marginTop="@dimen/lanlist_margin"
+                    app:navGraph="@navigation/main_navigation"
+                    app:defaultNavHost="true"
+                    android:id="@+id/main_navcontroller"/>
+
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

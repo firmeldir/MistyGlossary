@@ -5,45 +5,48 @@
     <string name="translate">Translate</string>
     <string name="hint">Enter english words here for translation</string>
     <string name="error">It seems an error has occurred. Check internet connection</string>
+    <string name="select_language">Select language</string>
+    <string name="saved_phrases">Saved phrases</string>
+    <string name="clear_cache">Clear cache</string>
 
 
     <array name="lan_title">
         <item>Elvish</item>
-        <item>Orcish</item>
+        <item>Shakespeare</item>
         <item>Dothraki</item>
-        <item>Thuum</item>
+        <item>Pirate</item>
         <item>Yoda</item>
     </array>
 
     <array name="lan_info">
         <item>Learn to speak the language of the most powerful nation in Middle-earth</item>
-        <item>This is in case Sauron still returns and Sir Ian Murray McKellen will not have time</item>
+        <item>Translate, or not translate, that is the question, now</item>
         <item>Language from one great movie that is no longer fashionable now</item>
-        <item>The language of the most ancient creatures of Tamriel</item>
+        <item>Fifteen men on a dead mans chest! Yo ho ho and a bottle of rum</item>
         <item>When you speaking in this language, wisdom is added</item>
     </array>
 
     <array name="lan_path">
         <item>sindarin</item>
-        <item>orcish</item>
+        <item>shakespeare</item>
         <item>dothraki</item>
-        <item>thuum</item>
+        <item>pirate</item>
         <item>yoda</item>
     </array>
 
     <array name="lan_image">
         <item>@drawable/elvish</item>
-        <item>@drawable/orcish</item>
+        <item>@drawable/shakespeare</item>
         <item>@drawable/dothraki</item>
-        <item>@drawable/thuum</item>
+        <item>@drawable/pirate</item>
         <item>@drawable/yoda</item>
     </array>
 
     <array name="lan_back">
         <item>@color/elvishColor</item>
-        <item>@color/orcishColor</item>
+        <item>@color/shakeColor</item>
         <item>@color/dothrakiColor</item>
-        <item>@color/thuumColor</item>
+        <item>@color/pirateColor</item>
         <item>@color/yodaColor</item>
     </array>
 

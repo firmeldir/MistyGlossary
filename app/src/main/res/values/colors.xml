@@ -12,9 +12,14 @@
 
 
     <color name="elvishColor">#D9D6D1</color>
-    <color name="orcishColor">#C5CFB4</color>
+    <color name="pirateColor">#282828</color>
     <color name="dothrakiColor">#857660</color>
-    <color name="thuumColor">#A6B3AA</color>
+    <color name="shakeColor">#AEB96E</color>
     <color name="yodaColor">#69A026</color>
+
+    <color name="productGridBackgroundColor">#FFFBFA</color>
+
+    <color name="engWordColor">#212121</color>
+    <color name="transWordColor">#48181717</color>
 
 </resources>

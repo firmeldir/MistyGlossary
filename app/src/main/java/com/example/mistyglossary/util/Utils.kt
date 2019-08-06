@@ -22,7 +22,6 @@ fun initializeLanguages(context: Context) : List<MistyLanguage>
     for((index , item) in titles.withIndex())
     {
         mistyLanguage.add(MistyLanguage(index ,item, info[index], path[index], images.getResourceId(index, 0),back.getResourceId(index, 0) ))
-        Log.i("TAG", titles[index])
     }
 
     images.recycle()

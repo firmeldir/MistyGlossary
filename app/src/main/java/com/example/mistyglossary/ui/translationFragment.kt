@@ -17,6 +17,8 @@ import com.bumptech.glide.Glide
 
 import com.example.mistyglossary.R
 import com.example.mistyglossary.databinding.FragmentTranslationBinding
+import com.example.mistyglossary.util.WordAdapter
+import com.example.mistyglossary.viewmodels.TAG
 import com.example.mistyglossary.viewmodels.TranslationViewModel
 import com.google.android.material.snackbar.Snackbar
 
@@ -36,16 +38,13 @@ class TranslationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-
         binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_translation, container, false)
-
         binding.lifecycleOwner = this
 
         lanId = TranslationFragmentArgs.fromBundle(arguments!!).lanId
 
         binding.viewModel = translationViewModel
         binding.included.viewModel = translationViewModel
-
         binding.included.translateButton.setOnClickListener {
            translationViewModel.reactRequest(binding.included.textInput.text.toString())
         }
@@ -57,19 +56,26 @@ class TranslationFragment : Fragment() {
             }
         })
 
-        //postponeEnterTransition()
-//        (view?.parent as? ViewGroup)?.doOnPreDraw {
-//            // Parent has been drawn. Start transitioning!
-//            Log.i("TAG", "please+(((")
-        //startPostponedEnterTransition()
-        //}
+        val adapter = WordAdapter()
+        binding.included.doneWords.adapter = adapter
+        translationViewModel.lanWords.observe(viewLifecycleOwner, Observer {
+            adapter.submitList(it)
+            Log.i(TAG, it.toString())
+        })
 
         return binding.root
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         sharedElementEnterTransition = TransitionInflater.from(context).inflateTransition(android.R.transition.move)
     }
 }
+
+
+//postponeEnterTransition()
+//        (view?.parent as? ViewGroup)?.doOnPreDraw {
+//            // Parent has been drawn. Start transitioning!
+//            Log.i("TAG", "please+(((")
+//startPostponedEnterTransition()
+//}
