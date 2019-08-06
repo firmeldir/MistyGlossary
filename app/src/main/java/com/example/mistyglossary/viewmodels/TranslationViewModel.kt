@@ -97,6 +97,15 @@ class TranslationViewModel(val curLanId: Int, application: Application) : Androi
         }
     }
 
+    fun updateWord(doneWord: DoneWord) {
+        coroutineScope.launch {
+            withContext(Dispatchers.IO){
+                Log.i(TAG, "R $doneWord")
+                repository.updateWord(doneWord)
+            }
+        }
+    }
+
     private fun findWord(word: String)
     {
         var string : String? = ""

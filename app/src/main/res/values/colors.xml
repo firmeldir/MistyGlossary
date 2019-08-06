@@ -21,5 +21,6 @@
 
     <color name="engWordColor">#212121</color>
     <color name="transWordColor">#48181717</color>
+    <color name="inTransNav">#03181717</color>
 
 </resources>

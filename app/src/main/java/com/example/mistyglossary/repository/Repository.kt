@@ -25,6 +25,10 @@ class Repository(private val wordDatabase: WordDatabase, val language: String = 
         wordDatabase.wordDao.insertWord(word.asDBE())
     }
 
+    fun updateWord(word: DoneWord) {
+        wordDatabase.wordDao.updateWord(if(word.saved){1}else{0}, word.wordId)
+    }
+
     fun findWord(word: String) : String? = wordDatabase.wordDao.findWord(word)?.transWord
 
 

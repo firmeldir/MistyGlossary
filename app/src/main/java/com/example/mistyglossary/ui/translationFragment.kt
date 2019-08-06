@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.doOnPreDraw
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -56,12 +57,23 @@ class TranslationFragment : Fragment() {
             }
         })
 
-        val adapter = WordAdapter()
-        binding.included.doneWords.adapter = adapter
-        translationViewModel.lanWords.observe(viewLifecycleOwner, Observer {
-            adapter.submitList(it)
-            Log.i(TAG, it.toString())
-        })
+        val draw1 = ResourcesCompat.getDrawable(this.resources, R.drawable.ic_baseline_star_border_24px, null)
+        val draw2 = ResourcesCompat.getDrawable(this.resources, R.drawable.ic_baseline_star_24px, null)
+
+        if(draw1 != null && draw2 != null){
+            val adapter = WordAdapter(WordAdapter.WordListener {
+                Log.i(TAG, "BEFORE UPDATE $it")
+                translationViewModel.updateWord(it)
+            },
+                draw2,draw1
+            )
+
+            binding.included.doneWords.adapter = adapter
+            translationViewModel.lanWords.observe(viewLifecycleOwner, Observer {
+                adapter.submitList(it)
+                Log.i(TAG, it.toString())
+            })
+        }
 
         return binding.root
     }

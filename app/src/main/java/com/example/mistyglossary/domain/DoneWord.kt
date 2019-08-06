@@ -6,6 +6,6 @@ data class DoneWord (
     val transWord: String,
 
     val lang: String,
-    val saved: Boolean = false,
+    var saved: Boolean = false,
     val wordId : Int = 0
 )

@@ -8,9 +8,15 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.mistyglossary.database.getDatabase
 import com.example.mistyglossary.domain.DoneWord
 import com.example.mistyglossary.repository.Repository
+import kotlinx.coroutines.*
 
 class PreservationViewModel(application: Application) : AndroidViewModel(application)
 {
+    //Coroutines
+    private val coroutineJob = Job()
+
+    private val coroutineScope = CoroutineScope(coroutineJob + Dispatchers.Main)
+
     //Repository will rule them all
     private val repository : Repository
 
@@ -21,7 +27,13 @@ class PreservationViewModel(application: Application) : AndroidViewModel(applica
     val savedWords: LiveData<List<DoneWord>>
         get() = repository.savedWords
 
-
+    fun updateWord(doneWord: DoneWord) {
+        coroutineScope.launch {
+            withContext(Dispatchers.IO){
+                repository.updateWord(doneWord)
+            }
+        }
+    }
 
     class PreservationViewModelFactory(private val application: Application) : ViewModelProvider.Factory
     {
