@@ -8,6 +8,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.mistyglossary.database.getDatabase
 import com.example.mistyglossary.databinding.ActivityMainBinding
+import com.example.mistyglossary.injection.DaggerFragmentComponent
+import com.example.mistyglossary.injection.module.RepositoryModule
 import com.example.mistyglossary.repository.Repository
 import com.example.mistyglossary.util.NavClickListener
 import kotlinx.coroutines.CoroutineScope
@@ -20,11 +22,19 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
 
+    lateinit var repository : Repository
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         setSupportActionBar(binding.mainToolbar)
+
+        val fragmentComponent = DaggerFragmentComponent.builder()
+            .mainIOComponent(MistyApplication.get(application).mainIOComponent)
+            .repositoryModule(RepositoryModule(applicationContext,"")).build()
+
+        repository = fragmentComponent.getRepository()
 
         binding.mainToolbar.setNavigationOnClickListener (NavClickListener(this,
             binding.downDropper,
@@ -41,7 +51,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.clearB.setOnClickListener {
-            val repository = Repository(getDatabase(application))
             val coroutineScope = CoroutineScope(Dispatchers.Main)
 
             coroutineScope.launch {

@@ -5,10 +5,14 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.mistyglossary.MistyApplication
 import com.example.mistyglossary.database.getDatabase
 import com.example.mistyglossary.domain.DoneWord
+import com.example.mistyglossary.injection.DaggerFragmentComponent
+import com.example.mistyglossary.injection.module.RepositoryModule
 import com.example.mistyglossary.repository.Repository
 import kotlinx.coroutines.*
+import javax.inject.Inject
 
 class PreservationViewModel(application: Application) : AndroidViewModel(application)
 {
@@ -18,10 +22,13 @@ class PreservationViewModel(application: Application) : AndroidViewModel(applica
     private val coroutineScope = CoroutineScope(coroutineJob + Dispatchers.Main)
 
     //Repository will rule them all
-    private val repository : Repository
+    val repository : Repository
 
     init {
-        repository = Repository(getDatabase(application))
+        val fragmentComponent = DaggerFragmentComponent.builder()
+            .mainIOComponent(MistyApplication.get(application).mainIOComponent)
+            .repositoryModule(RepositoryModule(application.applicationContext, "")).build()
+        repository = fragmentComponent.getRepository()
     }
 
     val savedWords: LiveData<List<DoneWord>>
